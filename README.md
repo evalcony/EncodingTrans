@@ -9,3 +9,7 @@
 ```
 python3 main.py -type .tra -to utf-8
 ```
+
+参数介绍
+- type: 文件类型
+- to: 目标文件编码
