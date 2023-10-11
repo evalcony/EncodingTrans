@@ -40,8 +40,6 @@ def rewrite2(file_path, target_file_path, to_encoding):
         f.write(target_content)
 
 def loop_file(file_type, to_encoding):
-    # source_path = '/Users/evalcony/Desktop/py-encoding-input/'
-    # output_path = '/Users/evalcony/Desktop/py-encoding-output/'
     source_path = '~/Desktop/py-encoding-input/'
     output_path = '~/Desktop/py-encoding-output/'
     ps = os.path.expanduser(source_path)
