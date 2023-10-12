@@ -23,16 +23,25 @@ def rewrite2(file_path, target_file_path, to_encoding):
         content = f.read()
     encoding = chardet.detect(content)['encoding']
 
+    # print('当前文件编码:'+str(encoding))
+    # with codecs.open(file_path, 'r', encoding=encoding) as f:
+    #     content = f.read()
+    # target_content = content.encode(to_encoding)    
+
     print('当前文件编码:'+str(encoding))
     if encoding == 'GB2312':
         with codecs.open(file_path, 'r', encoding='GBK') as f:
             content = f.read()
-    elif encoding == 'utf-8':
-        with codecs.open(file_path, 'r', encoding='utf-8') as f:
-            content = f.read()
+    # elif encoding == 'utf-8':
+    #     with codecs.open(file_path, 'r', encoding='utf-8') as f:
+    #         content = f.read()
+    # elif encoding == 'ascii':
+    #     with codecs.open(file_path, 'r', encoding='ascii') as f:
+    #         content = f.read()
     else:
-        with codecs.open(file_path, 'r') as f:
+        with codecs.open(file_path, 'r', encoding=encoding) as f:
             content = f.read()
+
     target_content = content.encode(to_encoding)
 
     # save
